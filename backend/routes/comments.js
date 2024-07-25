@@ -53,4 +53,18 @@ router.get('/post/:postId',async(req,res)=>{
     }
 })
 
+module.exports = (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173'); // Or use '*' to allow all origins
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  
+    if (req.method === 'OPTIONS') {
+      res.status(200).end();
+      return;
+    }
+  
+    // Your function logic
+    res.json({ message: 'This is CORS-enabled for the specified origin!' });
+  };
+
 module.exports=router
