@@ -53,12 +53,12 @@ app.post("/api/upload",upload.single("file"),(req,res)=>{
     // console.log(req.body)
     res.status(200).json("Image has been uploaded successfully!")
 })
-connectDB();
-// app.listen(port, (err) => {
-//     if (err) {
-//         console.error("Failed to start server:", err);
-//         return;
-//     }
-//     console.log(`Server connected on port ${port}`);
-//     connectDB();
-// });
+
+app.listen(port, (err) => {
+    if (err) {
+        console.error("Failed to start server:", err);
+        return;
+    }
+    console.log(`Server connected on port ${port}`);
+    connectDB();
+});
